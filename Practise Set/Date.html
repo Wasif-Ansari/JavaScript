@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Date</title>
+    <h1 class="mess"></h1>
+
+    <button id="my-button" onclick='Pressed()'> 0</button>
+    <style>
+        #my-button{
+            height: 50px;
+            width: 50px;
+            font-size: larger;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+        .odd{
+            background-color: chartreuse;
+        }
+        .even{
+            background-color: aquamarine;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    
+    
+    <script>
+        let count = localStorage.getItem('count')||0;
+        function Pressed(){
+            count++; 
+            localStorage.setItem('count', count);
+            update()
+        }
+        function update(){
+            let elem = document.querySelector('#my-button');
+            if(count%2===0){
+                elem.classList.remove('odd')
+                elem.classList.add('even')
+
+            }else{
+                elem.classList.remove('even')
+                elem.classList.add('odd')
+            }
+            elem.innerText = count;
+        }
+        update()
+
+
+
+
+        // console.log(date.getDate());
+        // console.log(date.getFullYear());
+        // console.log(date.getTime());
+        // console.log(date.getMinutes());
+        // console.log(date.getMonth());
+        // console.log(date.getTimezoneOffset());
+        function Greet(name){
+            let date = new Date();
+            // console.log(date);
+            let hours = date.getHours()
+            let mins = date.getMinutes()
+
+            if(hours >=5 && hours< 12){
+                document.querySelector('.mess').innerText = `Good Morning ${name}`;
+            }else if(hours >=12 && hours< 17){
+                document.querySelector('.mess').innerText = `Good After-Noon ${name}`;
+            }else{
+                document.querySelector('.mess').innerText = `Good Night ${name}`;
+            }
+        }
+        Greet('Wasif');
+
+        
+
+    </script>
+
+</body>
+</html>

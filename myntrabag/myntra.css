@@ -1,0 +1,14 @@
+.green{
+    background-color: rgb(193, 253, 193);
+    border: None;
+    padding: 5px 15px;
+    border-radius: 10px;
+
+}
+.normal{
+    border: solid black;
+    border-radius: 5px;
+    padding: 5px 35px;
+    text-transform: uppercase;
+
+}

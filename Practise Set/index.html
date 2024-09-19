@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practise</title>
+</head>
+<body>
+
+    <script>
+        let product = {
+            size : "S",
+            name : "Jeans",
+            fit:"Slim",
+            type: "tight",
+            'delivery-time': "same day",
+        }
+
+        // let copyProduct = product;
+        // console.log("copy", copyProduct)
+        // console.log(product);
+        // copyProduct.size = "XL";
+        // console.log(product["delivery-time"]);
+
+
+        let obj = {
+            message: "Good Job",
+            status: "Completed"
+        }
+        console.log(obj)
+
+        let {message, status} = obj;
+        console.log(message);
+        console.log(status);
+
+
+        function isIdenticalProduct(p1,p2) {
+
+            if(typeof(p1) !== "object" || typeof(p2)!=="object"){
+                console.warn("Parameter passed is not an object");
+                return false;
+            }
+
+            if (p1==p2){
+                return true;
+            }
+            if(p1.name===p2.name && p1.size===p2.size && p1.fit===p2.fit){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        }
+    </script>
+    
+
+</body>
+</html>
